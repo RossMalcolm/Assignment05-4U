@@ -43,17 +43,39 @@ public class Screen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         //get directions
         canMoveForward = input.nextBoolean();
-        
+
         //move to next line
         input.nextLine();
     }
-    
-        public int getRoom(){
-            return room;
-        }
-        
-}
 
+    //contructors
+    public int getRoom() {
+        return room;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public boolean canMoveForward() {
+        return canMoveForward;
+    }
+
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    //test
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Screen s = new Screen(in);
+
+        System.out.println(s.getRoom());
+        System.out.println(s.getDirection());
+        System.out.println(s.canMoveForward());
+        System.out.println(s.getImage());
+    }
+}
