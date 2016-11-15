@@ -14,10 +14,13 @@ import java.util.Scanner;
  */
 public class Screen {
     //private ints 
-    private int direction;
     private int room;
+    private int floor;
     private BufferedImage image;
-    private boolean canMoveForward;
+    private boolean north;
+    private boolean east;
+    private boolean south;
+    private boolean west;
 
     public Screen(Scanner input) {
 
