@@ -14,7 +14,8 @@ import java.util.Scanner;
  */
 public class Screen {
     //private ints 
-    private int room;
+    private String direction;
+    private String room;
     private int floor;
     private BufferedImage image;
     private boolean north;
