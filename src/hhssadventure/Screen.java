@@ -21,21 +21,21 @@ public class Screen {
     private boolean east;
     private boolean south;
     private boolean west;
+    private boolean canMoveForward;
 
     public Screen(Scanner input) {
 
         //scan in the image name
         String imageName = input.next();
 
-        //split string to get direction and room
-        String[] split = imageName.split(" ");
-
-        //save room
-        room = Integer.parseInt(split[0]);
-
-        //save direction
-        direction = Integer.parseInt(split[1]);
-
+        //make arrays to get room and direction you are facing
+        
+        //room
+        String[] room = 
+        
+        //direction
+        String[] direction = 
+                
         //load image file
         try {
             File file = new File("file.txt");
@@ -59,8 +59,8 @@ public class Screen {
         return room;
     }
 
-    public int getDirection() {
-        return direction;
+    public int getFloor() {
+        return floor;
     }
 
     public boolean canMoveForward() {
@@ -77,7 +77,7 @@ public class Screen {
         Screen s = new Screen(in);
 
         System.out.println(s.getRoom());
-        System.out.println(s.getDirection());
+        System.out.println(s.getFloor());
         System.out.println(s.canMoveForward());
         System.out.println(s.getImage());
     }
