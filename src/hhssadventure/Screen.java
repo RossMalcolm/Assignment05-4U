@@ -49,3 +49,31 @@ public class Screen {
         
 }
 
+    //contructors
+    public int getRoom() {
+        return room;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public boolean canMoveForward() {
+        return canMoveForward;
+    }
+
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    //test
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Screen s = new Screen(in);
+
+        System.out.println(s.getRoom());
+        System.out.println(s.getFloor());
+        System.out.println(s.canMoveForward());
+        System.out.println(s.getImage());
+    }
+}
