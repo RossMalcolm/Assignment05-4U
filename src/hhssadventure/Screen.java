@@ -7,6 +7,7 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -15,48 +16,35 @@ import java.util.Scanner;
 public class Screen {
     //private ints 
     private String direction;
-    private String room;
-    private int floor;
+    private String hall;
     private BufferedImage image;
-    private boolean north;
-    private boolean east;
-    private boolean south;
-    private boolean west;
+    private boolean cantmove; 
+    private String nexthall;
 
-    public Screen(Scanner input) {
-
-        //scan in the image name
-        String imageName = input.next();
-
-        //split string to get direction and room
-        String[] split = imageName.split(" ");
-
-        //save room
-        room = Integer.parseInt(split[0]);
-
-        //save direction
-        direction = Integer.parseInt(split[1]);
+    public Screen(String hall, Scanner input) {
+        this.hall = hall;
+        
+        this.direction = input.next();
+        
+        String filename = input.next();
+        
+        this.cantmove = input.nextBoolean();
+        
+        if(cantmove == false){
+            
+        }
 
         //load image file
-        try {
-            File file = new File("file.txt");
-            Scanner s = new Scanner(file);
-            while (s.hasNext()) {
-                System.out.println(s.nextInt());
-            }
-        } catch (Exception e) {
+       try{
+            image = ImageIO.read(new File ("pics/" + filename));
+        }catch(Exception e){
             e.printStackTrace();
         }
-        
-        //get directions
-        canMoveForward = input.nextBoolean();
-        
-        //move to next line
-        input.nextLine();
+        cantmove = input.nextBoolean();
     }
     
-        public int getRoom(){
-            return room;
+        public int getHall(){
+            return hall;
         }
         
 }
