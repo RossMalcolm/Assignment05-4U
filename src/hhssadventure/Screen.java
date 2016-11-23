@@ -19,7 +19,8 @@ public class Screen {
     private String hall;
     private BufferedImage image;
     private boolean cantmove; 
-    private String nexthall;
+    private String nextHall;
+    private String nextDirection;
 
     public Screen(String hall, Scanner input) {
         this.hall = hall;
@@ -31,7 +32,8 @@ public class Screen {
         this.cantmove = input.nextBoolean();
         
         if(cantmove == false){
-            
+            this.nextHall = input.next();
+            this.nextDirection = input.next();
         }
 
         //load image file
@@ -40,40 +42,41 @@ public class Screen {
         }catch(Exception e){
             e.printStackTrace();
         }
-        cantmove = input.nextBoolean();
+        
+       input.nextLine();
+       
     }
     
-        public int getHall(){
-            return hall;
-        }
-        
-}
 
-    //contructors
-    public int getRoom() {
-        return room;
+    public String getHall() {
+        return this.hall;
     }
 
-    public int getFloor() {
-        return floor;
+    public String getDirection() {
+        return direction;
     }
 
-    public boolean canMoveForward() {
-        return canMoveForward;
+    public boolean move() {
+        return this.cantmove;
     }
 
     public BufferedImage getImage() {
-        return image;
+        return this.image;
+    }
+    
+    public String getNextHall(){
+        return this.nextHall;
+    }
+    public String getNextDirection(){
+        return this.nextDirection;
     }
 
     //test
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Screen s = new Screen(in);
-
-        System.out.println(s.getRoom());
-        System.out.println(s.getFloor());
-        System.out.println(s.canMoveForward());
+        Screen s = new Screen(input);
+        System.out.println(s.getHall());
+        System.out.println(s.move());
         System.out.println(s.getImage());
     }
-}
+
