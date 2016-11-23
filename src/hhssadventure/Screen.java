@@ -47,7 +47,7 @@ public class Screen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
         //get directions
         canMoveForward = input.nextBoolean();
 
