@@ -74,7 +74,7 @@ public class Screen {
     //test
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Screen s = new Screen(input);
+        Screen s = new Screen(Upstairs1, in);
         System.out.println(s.getHall());
         System.out.println(s.move());
         System.out.println(s.getImage());
