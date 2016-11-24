@@ -38,7 +38,7 @@ public class Screen {
 
         //load image file
        try{
-            image = ImageIO.read(new File ("pics/" + filename));
+            image = ImageIO.read(new File ("images/" + filename));
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -74,9 +74,12 @@ public class Screen {
     //test
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Screen s = new Screen(Upstairs1, in);
+        Screen s = new Screen("Upstairs1", in);
         System.out.println(s.getHall());
         System.out.println(s.move());
         System.out.println(s.getImage());
+        System.out.println(s.getNextDirection() + s.getNextHall());
     }
+    
+}
 
