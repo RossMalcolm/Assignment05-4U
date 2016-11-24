@@ -38,9 +38,9 @@ public class Screen {
         }
 
         //load image file
-        try {
-            image = ImageIO.read(new File("images/" + filename));
-        } catch (Exception e) {
+       try{
+            image = ImageIO.read(new File ("images/" + filename));
+        }catch(Exception e){
             e.printStackTrace();
         }
 
@@ -80,7 +80,10 @@ public class Screen {
         System.out.println(s.getHall());
         System.out.println(s.move());
         System.out.println(s.getImage());
-        System.out.println(s.getDirection() + s.getNextHall());
+        System.out.println(s.getNextDirection() + s.getNextHall());
+    }
+    
+}
 
     }
 }
