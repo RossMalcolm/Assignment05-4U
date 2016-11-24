@@ -7,6 +7,7 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -15,65 +16,51 @@ import java.util.Scanner;
 public class Screen {
     //private ints 
     private String direction;
-    private String room;
-    private int floor;
+    private String hall;
     private BufferedImage image;
-    private boolean north;
-    private boolean east;
-    private boolean south;
-    private boolean west;
-    private boolean canMoveForward;
-
-    public Screen(Scanner input) {
-
-        //scan in the image name
-        String imageName = input.next();
-
-        //make arrays to get room and direction you are facing
+    private boolean cantmove; 
+    private String nexthall;
+    private String nextDirection;
+    
+    public Screen(String hall, Scanner input) {
+        this.hall = hall;
         
-        //room
-        String[] room = 
+        this.direction = input.next();
         
-        //direction
-        String[] direction = 
-                
-        //load image file
-        try {
-            File file = new File("file.txt");
-            Scanner s = new Scanner(file);
-            while (s.hasNext()) {
-                System.out.println(s.nextInt());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        String filename = input.next();
+        
+        this.cantmove = input.nextBoolean();
+        
+        if(cantmove == false){
+            this.nexthall = input.next();
+            this.nextDirection = input.next();
         }
         
-        //get directions
-        canMoveForward = input.nextBoolean();
-
-        //move to next line
-        input.nextLine();
+        //load image file
+       try{
+            image = ImageIO.read(new File ("pics/" + filename));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        cantmove = input.nextBoolean();
     }
-
+    
     //contructors
-    public int getRoom() {
-        return room;
+    public String getHall() {
+        return hall;
     }
 
-    public int getFloor() {
-        return floor;
-    }
-
-    public boolean canMoveForward() {
-        return canMoveForward;
+    public String getDirection() {
+        return direction;
     }
 
     public BufferedImage getImage() {
         return image;
     }
-
+    
     //test
     public static void main(String[] args) {
+        
         Scanner in = new Scanner(System.in);
         Screen s = new Screen(in);
 
@@ -81,5 +68,9 @@ public class Screen {
         System.out.println(s.getFloor());
         System.out.println(s.canMoveForward());
         System.out.println(s.getImage());
+    
     }
+
+
 }
+
