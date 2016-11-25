@@ -26,7 +26,6 @@ public class School {
             
             this.initialHall = input.next();
             this.initialDirection = input.next();
-             
             // make the screens 
             // loop to the end of the file
             while(input.hasNext()){
@@ -41,20 +40,15 @@ public class School {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Screen getScreen(String hall, String direction){
+        // go through each screen
+        for(Screen s: screens){
+            // see if the row and column match
+            if(s.getHall() == hall && s.getDirection() == direction){
+                // I found the screen
+                return s;
+            }
+        }
+        return null;
+    }   
 }
