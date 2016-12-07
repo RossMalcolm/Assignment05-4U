@@ -24,15 +24,18 @@ public class School {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
             
-            this.initialHall = input.next();
-            this.initialDirection = input.next();
+            this.initialHall = input.nextLine();
+            this.initialDirection = input.nextLine();
             // make the screens 
             // loop to the end of the file
             while(input.hasNext()){
+                String hall = input.nextLine();
+                for(int i = 0; i < 4; i ++){
                 // creating the screen from the scanner
-                Screen s = new Screen("Upstairs1",input);
+                Screen s = new Screen(hall ,input);
                 // add the created screen to the list
                 screens.add(s);
+                }
             }
             
         } catch (FileNotFoundException ex) {
@@ -44,7 +47,7 @@ public class School {
         // go through each screen
         for(Screen s: screens){
             // see if the row and column match
-            if(s.getHall() == hall && s.getDirection() == direction){
+            if(s.getHall().equals(hall)  && s.getDirection().equals(direction)){
                 // I found the screen
                 return s;
             }
