@@ -15,14 +15,23 @@ public class Controller {
     private String hall;
     private String direction;
 
-    public Controller(GUI gui, School school, String direction, String hall) {
+    public Controller(GUI gui, School school) {
     this.gui = gui;
     this.school = school;
-    this.direction = direction;
+    this.direction = school.;
     this.hall = hall;
     
     gui.setController(this);
     
-    Screen start = school.
+    Screen start = school.getScreen(hall, direction);
+    gui.setImage(start.getImage());
+    }
+    public void goNorth(){
+    Screen current = school.getScreen(hall, direction);
+    //ask if we can go north
+    if(current.cantmove() == false && direction.equals("N")){              
+    Screen newScreen = school.getScreen(hall, direction);
+    gui.setImage(newScreen.getImage());
     }
 }
+    }

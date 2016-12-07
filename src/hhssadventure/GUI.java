@@ -25,7 +25,7 @@ private Controller controller;
     }
 
     public void setImage(BufferedImage img){
-        ImagePanel.setImage(img);
+        image1.setImage(img);
     }
     /**
      * This method is called from within the constructor to initialize the form.

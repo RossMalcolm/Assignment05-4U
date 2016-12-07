@@ -56,7 +56,7 @@ public class Screen {
         return direction;
     }
 
-    public boolean move() {
+    public boolean cantmove() {
         return this.cantmove;
     }
 
@@ -77,13 +77,12 @@ public class Screen {
 
         Scanner in = new Scanner(System.in);
         Screen s = new Screen("Upstairs1", in);
-        System.out.println(s.getHall());
-        System.out.println(s.move());
+        System.out.println(s.getHall());       
         System.out.println(s.getImage());
         System.out.println(s.getNextDirection() + s.getNextHall());
     }
     
 }
 
-    }
-}
+    
+
