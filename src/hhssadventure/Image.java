@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package hhssadventure;
-
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import javax.swing.JComponent;

@@ -1,5 +1,7 @@
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,14 +12,21 @@ package hhssadventure;
  * @author preej0747
  */
 public class GUI extends javax.swing.JFrame {
-
+private Controller controller;
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
     }
+    
+    public void setController(Controller c){
+        controller = c;
+    }
 
+    public void setImage(BufferedImage img){
+        ImagePanel.setImage(img);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +40,7 @@ public class GUI extends javax.swing.JFrame {
         eastButton = new javax.swing.JButton();
         westButton = new javax.swing.JButton();
         northButton = new javax.swing.JButton();
+        image1 = new hhssadventure.Image();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,11 +66,17 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(eastButton)
                 .addGap(186, 186, 186))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(image1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(384, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(image1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(northButton)
@@ -113,6 +129,7 @@ public class GUI extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton eastButton;
+    private hhssadventure.Image image1;
     private javax.swing.JButton northButton;
     private javax.swing.JButton southButton;
     private javax.swing.JButton westButton;
