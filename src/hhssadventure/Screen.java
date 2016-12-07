@@ -71,7 +71,7 @@ public class Screen {
     public String getNextDirection() {
         return this.nextDirection;
     }
-
+    
     //test
     public static void main(String[] args) {
 
@@ -85,5 +85,5 @@ public class Screen {
     
 }
 
-    }
-}
+    
+
