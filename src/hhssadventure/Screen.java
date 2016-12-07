@@ -15,23 +15,24 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
     //private ints 
+
     private String direction;
     private String hall;
     private BufferedImage image;
-    private boolean cantmove; 
+    private boolean cantmove;
     private String nextHall;
     private String nextDirection;
 
     public Screen(String hall, Scanner input) {
         this.hall = hall;
-        
+
         this.direction = input.next();
-        
+
         String filename = input.next();
-        
+
         this.cantmove = input.nextBoolean();
-        
-        if(cantmove == false){
+
+        if (cantmove == false) {
             this.nextHall = input.next();
             this.nextDirection = input.next();
         }
@@ -42,11 +43,10 @@ public class Screen {
         }catch(Exception e){
             e.printStackTrace();
         }
-        
-       input.nextLine();
-       
+
+        input.nextLine();
+
     }
-    
 
     public String getHall() {
         return this.hall;
@@ -63,16 +63,18 @@ public class Screen {
     public BufferedImage getImage() {
         return this.image;
     }
-    
-    public String getNextHall(){
+
+    public String getNextHall() {
         return this.nextHall;
     }
-    public String getNextDirection(){
+
+    public String getNextDirection() {
         return this.nextDirection;
     }
 
     //test
     public static void main(String[] args) {
+
         Scanner in = new Scanner(System.in);
         Screen s = new Screen("Upstairs1", in);
         System.out.println(s.getHall());
@@ -83,3 +85,5 @@ public class Screen {
     
 }
 
+    }
+}
