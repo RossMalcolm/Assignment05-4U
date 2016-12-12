@@ -18,14 +18,15 @@ public class Controller {
     public Controller(GUI gui, School school) {
     this.gui = gui;
     this.school = school;
-    this.direction = school.;
-    this.hall = hall;
+    this.direction = school.getInitialDirection();
+    this.hall = school.getInitialHall();
     
     gui.setController(this);
     
     Screen start = school.getScreen(hall, direction);
     gui.setImage(start.getImage());
     }
+
     public void goNorth(){
     Screen current = school.getScreen(hall, direction);
     //ask if we can go north
@@ -35,3 +36,4 @@ public class Controller {
     }
 }
     }
+

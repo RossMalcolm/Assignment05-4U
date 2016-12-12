@@ -14,18 +14,18 @@ import java.util.Scanner;
  * @author farrb0382
  */
 public class School {
-    
+
     private ArrayList<Screen> screens;
     private String initialHall;
     private String initialDirection;
-    
-    public School(String fileName){
+
+    public School(String fileName) {
         try {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
-            
-            this.initialHall = input.nextLine();
-            this.initialDirection = input.nextLine();
+
+            this.initialHall = input.next();
+            this.initialDirection = input.next();
             // make the screens 
             // loop to the end of the file
             while(input.hasNext()){
@@ -37,15 +37,20 @@ public class School {
                 screens.add(s);
                 }
             }
-            
+            for (int i = 0; i < 4; i++) {
+            }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
     }
-    
-    public Screen getScreen(String hall, String direction){
+
+    public String getInitialVariables() {
+        return initialHall + initialDirection; 
+    }
+
+    public Screen getScreen(String hall, String direction) {
         // go through each screen
-        for(Screen s: screens){
+        for (Screen s : screens) {
             // see if the row and column match
             if(s.getHall().equals(hall)  && s.getDirection().equals(direction)){
                 // I found the screen
@@ -53,5 +58,5 @@ public class School {
             }
         }
         return null;
-    }   
+    }
 }
